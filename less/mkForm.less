@@ -1,0 +1,126 @@
+
+form {
+	.clearfix;
+	padding: 20px 5%;
+	background: @gray3;
+	border: 1px solid @gray5;
+	margin: 0;
+	&.noBackground { background:none;}
+	&.noPadding { padding:0; }
+	&.noBorder { border: none;}
+
+label,
+input,
+button,
+select,
+textarea {
+.font-size(12);
+margin: 0 0 5px 0; 
+vertical-align : baseline; 
+*vertical-align : middle; }
+
+textarea { .font-size(16); max-width:100%;}
+
+
+label, input, select { font-family: @arial; .font-size(16); padding-left: 5px; margin-bottom:10px;}
+label { .font-size(14); }
+
+
+label { 
+	display: inline-block; width: 30%; text-align: right; 
+	color : @gray7;
+	margin-right: 10px; line-height: 1.2;
+	&.radioLabel {
+		width: auto; text-align: left;
+		margin: 0 0 0 10px;
+	}
+	&.fullLength { width: 100%; text-align: left;}
+	&.autoLength { width: auto; margin: 0 5px; text-align: left;}
+	//&.error { display: block; color: @red !important; width:100% !important; margin-top: -5px;}
+	&.error { display: block; padding-left: 30%; color: @red; margin-bottom: 20px;}
+	&.short { width: 20%;} 
+	&.alignTop { vertical-align: top; }
+	em { color: @red; }
+}
+
+input[type=text], select, textarea { 
+	background-color: @gray2;
+	border-top: 1px solid @gray5;
+	border-left: 1px solid @gray5;
+}
+
+
+p { line-height: 1.25; margin:0 0 10px; padding:0; }
+
+input[type=text], select, .inputBlock { 
+	display: inline-block; width: 60%;
+}
+
+
+input.auto, label.auto { width: auto; }
+
+span.break { display:block; }
+
+.centeredBlock, input[type=text].centeredBlock { 
+	display: block; width: 80%;
+	text-align: left; 
+	margin: 0 auto;
+	&.padded { padding: 10px;}
+}
+
+.inputBlock { background: none; border: none; margin: -15px 0 20px;}
+
+	
+input.zipcodeUS, input.dateField, input.mkDatePicker { width: 80px;}
+select.formStateField { width: 150px;}
+input.phoneUS { width: 110px;}
+select, input { &.short { width: 70px;} }
+
+select { padding: 0 0 0 5px; margin: 0 0 10px; height: auto;}
+
+option { .font-size(12);}
+
+ul li { .font-size(12); margin: 0 0 10px; line-height: 1.2;}
+
+
+input.mkDatePicker {
+	width: 130px;
+	margin-right: 10px;
+}
+button.ui-datepicker-trigger {
+	border: none;
+}
+
+}  // form
+
+form div.returnMessage { 
+	display: none;
+	padding:10px; margin: 0 0 20px; 
+	border: 2px solid @red; 
+	color: @red; 
+	ul { margin:0; }
+}
+
+form input[type=submit], form input[type=button] {
+	margin: 10px 5px;
+	display: inline-block;
+	float: right;
+}
+
+
+form#donationForm {
+	label[for=otherComments], textarea[name=otherComments],
+	#giftInMemoryOf, #notificationData { display: none; }
+}
+
+// this is useful to prevent error messages from screwing up the display.  For example, just wrap an .errorOffset div around radio fields.
+.errorOffset { 
+	padding: 0 0 10px;
+	position:relative;
+	label.error { position: absolute; margin:0; width:100%; bottom: -5px; left:0;}
+}
+
+
+// special styling for the videoSelect error message in the trainingClassForm on the /training/dvd/apply page
+div.videoSelect {position: relative;}
+div.videoSelect label.error { position: absolute; top:0; right:0; }

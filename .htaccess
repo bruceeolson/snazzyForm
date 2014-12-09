@@ -1,0 +1,9 @@
+RewriteEngine on
+
+# if the directory or file doesn't exist, send a 306
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . - [R=306,L]
+
+# if no file requested respond with the list of files/folders in this directory
+DirectoryIndex disabled

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>snazzyForm example</title>
+
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link href="//fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<script src="//use.edgefonts.net/amaranth.js"></script>
+<style>
+html { font-size : 62.5%; }
+</style>
+</head>
+
+<body>
+        
+    <div id="example-form" style="display:none; max-width:300px; margin: 20px auto;">
+		<!-- ******************* contact sub-form ******************* -->                    
+        <form data-steplabel="contact" class="step">
+                    
+        	<div class="helpWidget">
+            	<p>Put some help message here.</p>
+            </div>
+        	<input type="hidden" name="action" value="faonForm"/>
+            
+            <label>Name:</label>
+            <input type="text" name="name" class="required" />
+                                                                                        
+            <div>              
+                <label>State:</label>
+                <select class="stateAbbrev" name="state"></select>
+            </div>
+                        
+            <label>Email:</label>
+            <input type="text" name="email" class="email required"/>
+        </form>
+        
+		<!-- ******************* message sub-form ******************* -->          
+        <form data-steplabel="message" class="step">
+        	<label class="alignTop">Message</label>
+        	<textarea name="message"></textarea>
+        </form>                                          
+    </div>  <!-- #example-form -->
+        
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.form.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.snazzyForm.js"></script>
+<script>
+$(function() { 
+	$('#example-form').snazzyForm({
+		//ajax : false,
+		url:'/missingkids/ajax.php',
+		confirmationHtml : '<p>Thanks.</p>'
+	});
+	$('#example-form').snazzyForm('autoPopulate',{		
+		name : 'Judy Contact',
+		state : 'MD',
+		email : 'jncmec@ncmec.org',
+		message : 'This is a test message'
+	});
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Buttons =================================================== */
+
+.btn {
+display : inline-block;
+*display : inline;
+/* IE7 inline-block hack */
+*zoom : 1;
+padding : 2px 11px 2px;
+margin-bottom : 0;
+font-family : @amaranth;
+.font-size(16);
+line-height : @baselineheight;
+color : @buttoncolor;
+text-align : center;
+vertical-align : middle;
+letter-spacing: 1px;
+background-color : @buttonbackground;
+.complexGradient(@white, @gray4, @white);
+border : @buttonborderwidth @buttonborderstyle @buttonbordercolor;
+border-bottom-color : @buttonbottombordercolor;
+.rounded(4px);
+cursor : pointer;
+*margin-left : .3em; 
+
+&:visited,
+&:hover {
+color : @buttoncolor;
+border: 1px solid @blue;
+text-decoration : none; }
+}
+
+a.btn:hover, input.btn:hover {
+	border-color : lighten(@blue, 20%); 
+	color: lighten(@blue, 20%);
+	border-bottom-color : lighten(@blue, 20%);
+}
+
+.btn:first-child {
+*margin-left : 0; }
+
+// disabled
+
+.btn-disabled {
+.opacity(.5); 
+cursor : default; }
+
+// error
+
+.btn-error {
+.errorgrad;
+border-color : darken(@errorcolor, 15%);
+border-bottom-color : darken(@errorcolor, 20%); 
+color : @white; 
+
+&:visited,
+&:hover {
+color : @white; }
+}
+

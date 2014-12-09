@@ -1,0 +1,80 @@
+.mktf {
+	margin:0 auto 10px;
+	overflow: hidden;
+	background-color : @gray3; 
+	p { .font-size(14); margin: 0 0 10px; line-height:1.4em;}
+	.dhead {
+		div {
+			float: left; .clearfix;			
+			height: 20px; width: 18.5%; margin: 0 .25%; padding: 5px .5% 10px;			
+			white-space : nowrap;
+			.vertical(@gray4, @gray5);
+			&[active] { .vertical(lighten(@red,10%), darken(@red,10%)); }
+			span { color : @white; font-family : @amaranth; line-height: 1; .font-size(16); }
+			span.number {
+				display:inline-block;
+				width: 16px; height:16px;
+				padding:5px; text-align:center;
+				background : url("@{artifacts}") -298px -21px no-repeat;
+			}
+		}
+	}
+	.steps { 
+		.clearfix;
+		width:500%; overflow:hidden;
+		.step { 
+			position: relative;
+			float:left; width:18%; 
+			padding: 20px 1% 20px;
+		}
+	}
+	.errorMessage { color : @red;}
+	form { 
+		background:none; border:none; padding:0; 
+		* { font-family: @arial; }
+		p { .font-size(13); }
+		h2 { font-family:@amaranth; font-style:italic; .font-size(16); color: #384754; border:none; margin: 10px 0 5px;}
+		label, input, select, textarea { .font-size(15); padding-left: 5px; margin-bottom:10px; }
+		select { outline:none;}
+		label { .font-size(13); }
+		input[type=text] { width:55%;}
+		textarea { width: 60%;}
+		textarea.qDetail { width:100% !important; }
+		input.btn { margin:0; }
+		.buttons { .clearfix; height: 35px; margin:10px; padding: 10px 0 40px; }
+	}
+	.returnMessage {
+		border: none;
+		background-color : lighten(@red, 50%);
+		ul.ajaxMessages * { color: @red;}
+	}
+	.mk-busy { 
+		width: 150px; height:30px; 
+		padding:10px 5px 5px 50px; margin: 5px 0;
+		background : url("../images/busy.gif") 10px 5px no-repeat;	
+	}
+	.message { margin: 20px 0;}
+}
+
+.helpWidget { 
+	margin-bottom: 10px;
+	.questionmark {
+		height: 20px; width: 20px;
+		margin: 0 auto;
+		cursor: pointer;
+		background : url("@{artifacts}") no-repeat -374px -16px;
+		&:hover { background : url("@{artifacts}") no-repeat -374px -36px;}
+	}
+	.content { 
+		display:none;
+		padding: 10px; border: 2px solid #aaa;
+		background-color: white;
+	}
+}
+
+.hangingIndent {
+    padding-left: 25px ;
+    text-indent: -25px ;
+	span:first-child { text-indent:0; display:inline-block; width: 25px;}
+}
+
